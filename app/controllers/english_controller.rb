@@ -50,7 +50,7 @@ class EnglishController < ApplicationController
           uq.result = 't' AND 
           u.id = uq.user_id 
         group by 
-          uq.user_id 
+          uq.user_id,u.login  
         order by 
           cnt desc 
         limit 3"
