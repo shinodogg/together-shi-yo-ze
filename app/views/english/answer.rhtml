@@ -1,0 +1,12 @@
+<%= render :partial => 'english_header' %>
+<% if true == @user_quiz.result %>
+	○ 正解です
+<% else %>
+    × 不正解です
+<% end %>
+<br><br>
+<% form_tag(:controller => 'english', :action => 'study') do %>
+<%= submit_tag(value='次の問題へ') %>
+<% end %>
+
+<%= render :partial => 'english_footer' %>

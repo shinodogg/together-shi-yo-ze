@@ -1,0 +1,48 @@
+<%= render :partial => 'english_header' %>
+Hi <%=h @login %>. This is BOOTCAMP!!!<br><br>
+<% form_tag(:controller => 'english', :action => 'answer') %>
+
+<%= hidden_field('quiz', 'id') %>
+
+｢問題｣<br><br>
+　<%=h @quiz.question %><br><br>
+
+｢選択肢｣<br><br>
+<table>
+<tr>
+	<td>a. <%= radio_button('quiz', 'answer', "a") %><%=h @quiz.answer_a %></td>
+</tr>
+<tr>
+	<td>b. <%= radio_button('quiz', 'answer', "b") %><%=h @quiz.answer_b %></td>
+</tr>
+<tr>
+	<td>c. <%= radio_button('quiz', 'answer', "c") %><%=h @quiz.answer_c %></td>
+</tr>
+<tr>
+	<td>d. <%= radio_button('quiz', 'answer', "d") %><%=h @quiz.answer_d %></td>
+</tr>
+</table>
+<br>
+<%= submit_tag(value='答える') %>
+<% end %><br>
+
+｢TOP3正解者｣<br>
+<table>
+<% i = 1 %>
+<% for score_user in @number_three_score_users %>
+	<tr>
+   		<td>
+   			<%=h i %>位
+		</td>
+   		<td>
+   			<%=h score_user.login %>さん
+		</td>
+		<td>
+			<%=h score_user.cnt %>問正解!<br>
+		</td>
+	</tr>
+<% i += 1 %>
+<% end %>
+</table>
+
+<%= render :partial => 'english_footer' %>

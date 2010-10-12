@@ -1,0 +1,21 @@
+<%= render :partial => 'welcome_header' %>
+
+<% form_tag do -%>
+<p><label for="login">Login</label><br/>
+<%= text_field_tag 'login' %></p>
+
+<p><label for="password">Password</label><br/>
+<%= password_field_tag 'password' %></p>
+
+<!--
+<p><label for="remember_me">自動ログイン:</label>
+<%= check_box_tag 'remember_me' %></p>
+-->
+
+<p><%= submit_tag 'ログイン' %></p>
+<% end -%>
+
+<%= link_to '新規登録はコチラ', {:controller => 'welcome', :action => 'signup'} %><br><br>
+
+<img src="/images/together_logo.jpg"><br>
+<%= render :partial => 'welcome_footer' %>

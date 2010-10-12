@@ -1,0 +1,28 @@
+<%= error_messages_for 'quiz' %>
+
+<!--[form:quiz]-->
+<p><label for="quiz_question">｢問題｣</label><br/>
+<%= text_area 'quiz', 'question', :cols => 25, :rows => 3 %></p>
+
+<p><label for="quiz_answer_a">a</label>
+<%= text_field 'quiz', 'answer_a', :size => 40  %></p>
+
+<p><label for="quiz_answer_b">b</label>
+<%= text_field 'quiz', 'answer_b', :size => 40  %></p>
+
+<p><label for="quiz_answer_c">c</label>
+<%= text_field 'quiz', 'answer_c', :size => 40  %></p>
+
+<p><label for="quiz_answer_d">d</label>
+<%= text_field 'quiz', 'answer_d', :size => 40  %></p>
+
+<p><label for="quiz_answer">｢答え｣</label><br/>
+　a. <%= radio_button('quiz', 'answer', "a") %><br>
+　b. <%= radio_button('quiz', 'answer', "b") %><br>
+　c. <%= radio_button('quiz', 'answer', "c") %><br>
+　d. <%= radio_button('quiz', 'answer', "d") %><br><br>
+
+<%= hidden_field 'quiz', 'user_id' %></p>
+
+<!--[eoform:quiz]-->
+

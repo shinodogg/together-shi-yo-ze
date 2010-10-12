@@ -1,0 +1,31 @@
+<%= render :partial => 'quiz_header' %>
+<%if flash[:notice] %>
+<p style="color: green"><%= flash[:notice] %></p>
+<% end %>
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag "登録" %>
+<% end %>
+<br><br>
+<% if @number_three_make_users != nil %>
+｢TOP3作成者｣<br>
+<table>
+    <% i = 1 %>
+	<% for make_user in @number_three_make_users %>
+	<tr>
+   		<td>
+   			<%=h i %>位
+		</td>
+   		<td>
+   			<%=h make_user.login %>さん
+		</td>
+		<td>
+			<%=h make_user.cnt %>問作成!<br>
+		</td>
+	</tr>
+	<% i += 1 %>
+	<% end %>
+</table>
+<% end %>
+
+<%= render :partial => 'quiz_footer' %>

@@ -1,0 +1,28 @@
+<%= render :partial => 'user_quiz_header' %>
+
+｢あなたの成績｣<br><br>
+
+正解:<%=h @user_quizzes_true_counts %><br>
+不正解:<%=h @user_quizzes_false_counts %><br>
+合計:<%=h @user_quizzes_counts %><br><br>
+
+詳細<br>
+<table border="1" cellpadding="3">
+  <tr>
+    <td>問題</td><td>結果</td>
+  </tr>
+  <% for user_quiz in @user_quizzes %>
+  <tr>
+    <td><%=h user_quiz.quiz_id %></td>
+    <% if user_quiz.result == true%>
+        <td>正解</td>
+    <% else %>
+        <td>不正解(<%= link_to "再挑戦", :controller => "english" ,:action => "revenge", :id => user_quiz.quiz_id %>)</td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+<%= will_paginate(@user_quizzes) %>
+<br><br>
+
+<%= render :partial => 'user_quiz_footer' %>
