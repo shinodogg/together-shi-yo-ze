@@ -16,7 +16,7 @@ class QuizzesController < ApplicationController
         where 
           u.id = q.user_id 
         group by 
-          q.user_id 
+          q.user_id, u.login  
         order by 
           cnt desc 
         limit 3"
