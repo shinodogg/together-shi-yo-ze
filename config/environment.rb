@@ -39,6 +39,6 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
   Rails::Initializer.run do |config|
-    config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
+    config.gem 'will_paginate', :version => '~> 2.3.5', :source => 'http://gemcutter.org'
   end
 end
