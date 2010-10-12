@@ -47,7 +47,7 @@ class EnglishController < ApplicationController
           user_quizzes uq, 
           users u 
         where 
-          uq.result = 1 AND 
+          uq.result = 't' AND 
           u.id = uq.user_id 
         group by 
           uq.user_id 
