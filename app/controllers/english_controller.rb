@@ -7,7 +7,7 @@ class EnglishController < ApplicationController
     @quiz = Quiz.find(:first, :order => 'RANDOM()');
     @number_three_score_users = UserQuiz.find_by_sql(
         "select 
-          uq.user_id, 
+          u.login, 
           count(*) as cnt 
         from 
           user_quizzes uq, 
@@ -16,7 +16,7 @@ class EnglishController < ApplicationController
           uq.result = 't' AND 
           u.id = uq.user_id 
         group by 
-          uq.user_id 
+          uq.user_id, u.login  
         order by 
           cnt desc 
         limit 3"
