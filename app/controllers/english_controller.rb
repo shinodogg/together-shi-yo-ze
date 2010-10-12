@@ -4,7 +4,8 @@ class EnglishController < ApplicationController
  
   def study
     @login = current_user[:login]
-    @quiz = Quiz.find(:first, :order => 'RANDOM()');
+    @quiz = Quiz.find(:first, :order => 'RANDOM()')
+    @quiz.answer = nil
     @number_three_score_users = UserQuiz.find_by_sql(
         "select 
           u.login, 
