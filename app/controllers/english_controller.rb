@@ -40,6 +40,7 @@ class EnglishController < ApplicationController
   def revenge
     @login = current_user[:login]
     @quiz = Quiz.find(params[:id]);
+    @quiz.answer = nil
     @number_three_score_users = UserQuiz.find_by_sql(
         "select 
           u.login, 
